@@ -63,23 +63,30 @@ jobs:
         bundle exec fastlane run increment_version_number_in_plist version_number:"${tag}"  scheme:"ClashX"
 
     - name: build
-      # 使用临时签名进行测试构建
-      # env:
-      #   CODE_SIGN_IDENTITY: "Developer ID Application: Fuzhou West2Online Internet Inc. (MEWHFZ92DY)"
       run: |
         cd ClashX
         python3 add_build_info.py
         cd ..
-        # 使用 check lane（无签名构建）
-        bundle exec fastlane check
 
-        # Find and copy the built .app from derived data
+        # Build using xcodebuild directly for better control
+        echo "Building ClashX..."
+        xcodebuild clean build \
+          -workspace ClashX.xcworkspace \
+          -scheme ClashX \
+          -configuration Release \
+          -derivedDataPath ./build_derived_data \
+          CODE_SIGN_IDENTITY="-" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO
+
+        # Find the built .app
         echo "Looking for built app..."
-        find ./build_derived_data -name "ClashX.app" -type d
-        APP_PATH=$(find ./build_derived_data -name "ClashX.app" -type d | head -n 1)
+        APP_PATH=$(find ./build_derived_data/Build/Products/Release -name "ClashX.app" -type d | head -n 1)
 
         if [ -z "$APP_PATH" ]; then
-          echo "Error: ClashX.app not found in build_derived_data!"
+          echo "Error: ClashX.app not found!"
+          echo "Searching in all build directories..."
+          find ./build_derived_data -name "ClashX.app" -type d
           exit 1
         fi
 
@@ -89,7 +96,7 @@ jobs:
 
         # Find and zip the dSYM
         echo "Looking for dSYM..."
-        DSYM_PATH=$(find ./build_derived_data -name "ClashX.app.dSYM" -type d | head -n 1)
+        DSYM_PATH=$(find ./build_derived_data/Build/Products/Release -name "ClashX.app.dSYM" -type d | head -n 1)
         if [ -n "$DSYM_PATH" ]; then
           echo "Found dSYM at: $DSYM_PATH"
           echo "Zipping dSYM..."
@@ -100,7 +107,7 @@ jobs:
 
         echo "Checking SMJobBless Vailded"
         python3 SMJobBlessUtil.py check ClashX.app || echo "SMJobBless check skipped"
-        echo "Check done"
+        echo "Build complete!"
 
     - name: setup node
       if: startsWith(github.ref, 'refs/tags/') || contains(github.event.head_commit.message, '[beta]')
