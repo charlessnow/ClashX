@@ -84,7 +84,7 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/') || contains(github.event.head_commit.message, '[beta]')
       run: |
         npm install --global create-dmg
-        create-dmg ClashX.app
+        create-dmg --skip-signing ClashX.app || create-dmg --skip-signing --overwrite ClashX.app
         mv ClashX*.dmg ClashX.dmg
 
     # 临时禁用公证步骤（需要 Apple Developer 账号）
