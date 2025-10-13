@@ -1,0 +1,308 @@
+/* No comment provided by engineer. */
+"Active Connections" = "Active Connections";
+
+/* No comment provided by engineer. */
+"Add a remote config" = "Add a remote config";
+
+/* No comment provided by engineer. */
+"Add a remote control config" = "Add a remote control config";
+
+/* No comment provided by engineer. */
+"All Clients" = "All Clients";
+
+/* No comment provided by engineer. */
+"All Hosts" = "All Hosts";
+
+/* No comment provided by engineer. */
+"Apply and Quit" = "Apply and Quit";
+
+/* No comment provided by engineer. */
+"Benchmark" = "Benchmark";
+
+/* No comment provided by engineer. */
+"Benchmark Finished!" = "Benchmark Finished!";
+
+/* No comment provided by engineer. */
+"Benchmark has begun, please wait." = "Benchmark has begun, please wait.";
+
+/* No comment provided by engineer. */
+"Benchmark is processing, please wait." = "Benchmark is processing, please wait.";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"ClashX fail to create ~/.config/clash folder. Please check privileges or manually create folder and restart ClashX." = "ClashX fail to create ~/.config/clash folder. Please check privileges or manually create folder and restart ClashX.";
+
+/* No comment provided by engineer. */
+"ClashX needs to install/update a helper tool with administrator privileges, otherwise ClashX won't be able to configure system proxy." = "ClashX needs to install/update a helper tool with administrator privileges, otherwise ClashX won't be able to configure system proxy.";
+
+/* No comment provided by engineer. */
+"ClashX Start Error!" = "ClashX Start Error!";
+
+/* No comment provided by engineer. */
+"ClashX use a daemon helper to setup your system proxy. Please enable ClashX in the Login Items under the Allow in the Background section and relaunch the app" = "ClashX use a daemon helper to setup your system proxy. Please enable ClashX in the Login Items under the Allow in the Background section and relaunch the app";
+
+/* No comment provided by engineer. */
+"Click OK to quit the app and apply change." = "Click OK to quit the app and apply change.";
+
+/* No comment provided by engineer. */
+"Client" = "Client";
+
+/* No comment provided by engineer. */
+"Close Connection" = "Close Connection";
+
+/* No comment provided by engineer. */
+"Config file have been changed" = "Config file have been changed";
+
+/* No comment provided by engineer. */
+"Config loading Fail!" = "Config loading Fail!";
+
+/* No comment provided by engineer. */
+"Connecting" = "Connecting";
+
+/* No comment provided by engineer. */
+"Copy Shell Command" = "Copy Shell Command";
+
+/* No comment provided by engineer. */
+"Copy Shell Command (External)" = "Copy Shell Command (External)";
+
+/* No comment provided by engineer. */
+"Custom your GEOIP MMDB download address." = "Custom your GEOIP MMDB download address.";
+
+/* No comment provided by engineer. */
+"Date" = "Date";
+
+/* No comment provided by engineer. */
+"Details" = "Details";
+
+/* No comment provided by engineer. */
+"Direct" = "Direct";
+
+/* No comment provided by engineer. */
+"Direct Mode" = "Direct Mode";
+
+/* No comment provided by engineer. */
+"Done" = "Done";
+
+/* No comment provided by engineer. */
+"Download" = "Download";
+
+/* No comment provided by engineer. */
+"Download fail" = "Download fail";
+
+/* No comment provided by engineer. */
+"Download speed" = "Download speed";
+
+/* No comment provided by engineer. */
+"Edit in Text Mode" = "Edit in Text Mode";
+
+/* No comment provided by engineer. */
+"fail" = "fail";
+
+/* No comment provided by engineer. */
+"Fail" = "Fail";
+
+/* No comment provided by engineer. */
+"Fail:" = "Fail:";
+
+/* No comment provided by engineer. */
+"fails: %@" = "fails: %@";
+
+/* No comment provided by engineer. */
+"Global" = "Global";
+
+/* No comment provided by engineer. */
+"Global Mode" = "Global Mode";
+
+/* No comment provided by engineer. */
+"Host" = "Host";
+
+/* No comment provided by engineer. */
+"Hosts" = "Hosts";
+
+/* No comment provided by engineer. */
+"hours" = "hours";
+
+/* No comment provided by engineer. */
+"iCloud not available" = "iCloud not available";
+
+/* No comment provided by engineer. */
+"If you can not find ClashX in the settings, you can try reset daemon" = "If you can not find ClashX in the settings, you can try reset daemon";
+
+/* No comment provided by engineer. */
+"Install" = "Install";
+
+/* No comment provided by engineer. */
+"Invalid input" = "Invalid input";
+
+/* No comment provided by engineer. */
+"Legacy Install" = "Legacy Install";
+
+/* No comment provided by engineer. */
+"Load Balance" = "Load Balance";
+
+/* No comment provided by engineer. */
+"Local Clients" = "Local Clients";
+
+/* No comment provided by engineer. */
+"Need to Restart the ClashX to Take effect, Please start clashX manually" = "Need to Restart the ClashX to Take effect, Please start clashX manually";
+
+/* No comment provided by engineer. */
+"Never" = "Never";
+
+/* No comment provided by engineer. */
+"Never show again" = "Never show again";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Open Connection Details" = "Open Connection Details";
+
+/* No comment provided by engineer. */
+"Open Dashboard" = "Open Dashboard";
+
+/* No comment provided by engineer. */
+"Open Log" = "Open Log";
+
+/* No comment provided by engineer. */
+"Open Menu" = "Open Menu";
+
+/* No comment provided by engineer. */
+"Open System Login Item Setting" = "Open System Login Item Setting";
+
+/* No comment provided by engineer. */
+"Please enable the location service for ClashX to detect your current WiFi network's SSID name and provide the auto-suspend services." = "Please enable the location service for ClashX to detect your current WiFi network's SSID name and provide the auto-suspend services.";
+
+/* No comment provided by engineer. */
+"Ports Open Fail, Please try to restart ClashX" = "Ports Open Fail, Please try to restart ClashX";
+
+/* No comment provided by engineer. */
+"Prelease" = "Prelease";
+
+/* No comment provided by engineer. */
+"Proxy Mode" = "Proxy Mode";
+
+/* No comment provided by engineer. */
+"Proxy settings are changed by another process. ClashX is no longer the default system proxy." = "Proxy settings are changed by another process. ClashX is no longer the default system proxy.";
+
+/* No comment provided by engineer. */
+"Quit" = "Quit";
+
+/* No comment provided by engineer. */
+"Quit ClashX?" = "Quit ClashX?";
+
+/* No comment provided by engineer. */
+"Recent Connections" = "Recent Connections";
+
+/* No comment provided by engineer. */
+"Reduce alerts if notification permission is disabled" = "Reduce alerts if notification permission is disabled";
+
+/* No comment provided by engineer. */
+"Reload Config Fail" = "Reload Config Fail";
+
+/* No comment provided by engineer. */
+"Reload Config Succeed" = "Reload Config Succeed";
+
+/* No comment provided by engineer. */
+"Remote Config Format Error" = "Remote Config Format Error";
+
+/* No comment provided by engineer. */
+"Remote Config Update" = "Remote Config Update";
+
+/* No comment provided by engineer. */
+"Remote Config Update Fail" = "Remote Config Update Fail";
+
+/* No comment provided by engineer. */
+"Requests" = "Requests";
+
+/* No comment provided by engineer. */
+"Reset Daemon" = "Reset Daemon";
+
+/* No comment provided by engineer. */
+"ReTest" = "ReTest";
+
+/* No comment provided by engineer. */
+"Rule" = "Rule";
+
+/* No comment provided by engineer. */
+"Rule Mode" = "Rule Mode";
+
+/* No comment provided by engineer. */
+"Script" = "Script";
+
+/* No comment provided by engineer. */
+"Should be a least 1 hour" = "Should be a least 1 hour";
+
+/* No comment provided by engineer. */
+"Sources" = "Sources";
+
+/* No comment provided by engineer. */
+"Stable" = "Stable";
+
+/* No comment provided by engineer. */
+"Status" = "Status";
+
+/* No comment provided by engineer. */
+"Succeed!" = "Succeed!";
+
+/* No comment provided by engineer. */
+"Success" = "Success";
+
+/* No comment provided by engineer. */
+"Success!" = "Success!";
+
+/* No comment provided by engineer. */
+"System Proxy" = "System Proxy";
+
+/* No comment provided by engineer. */
+"System Proxy Changed" = "System Proxy Changed";
+
+/* No comment provided by engineer. */
+"Tap to reload config" = "Tap to reload config";
+
+/* No comment provided by engineer. */
+"Testing" = "Testing";
+
+/* No comment provided by engineer. */
+"The active connections will be interrupted." = "The active connections will be interrupted.";
+
+/* No comment provided by engineer. */
+"The remote config name is duplicated" = "The remote config name is duplicated";
+
+/* No comment provided by engineer. */
+"The status icon is coverd or hide by other app." = "The status icon is coverd or hide by other app.";
+
+/* No comment provided by engineer. */
+"This version of ClashX contains a break change due to clash core 1.0 released. Check if your config is not working properly." = "This version of ClashX contains a break change due to clash core 1.0 released. Check if your config is not working properly.";
+
+/* No comment provided by engineer. */
+"total: %d, success: %d" = "total: %d, success: %d";
+
+/* No comment provided by engineer. */
+"Type" = "Type";
+
+/* No comment provided by engineer. */
+"Unknown" = "Unknown";
+
+/* No comment provided by engineer. */
+"Update external resource complete" = "Update external resource complete";
+
+/* No comment provided by engineer. */
+"Update GEOIP Database" = "Update GEOIP Database";
+
+/* No comment provided by engineer. */
+"Update remote config update interval" = "Update remote config update interval";
+
+/* No comment provided by engineer. */
+"Updating" = "Updating";
+
+/* No comment provided by engineer. */
+"Upload" = "Upload";
+
+/* No comment provided by engineer. */
+"Upload speed" = "Upload speed";
+
+/* No comment provided by engineer. */
+"Use reload config to try reconnect." = "Use reload config to try reconnect.";

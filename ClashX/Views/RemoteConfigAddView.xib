@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19162" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19162"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView misplaced="YES" id="c22-O7-iKe" customClass="RemoteConfigAddView" customModule="ClashX_Pro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xFP-JM-BeS">
+                    <rect key="frame" x="-2" y="3" width="87" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Config Name:" id="rjt-gw-VUT">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2NP-oB-lQ0">
+                    <rect key="frame" x="88" y="31" width="250" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="jJz-ed-Kab"/>
+                        <constraint firstAttribute="height" constant="22" id="kdH-PF-SsK"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="77A-HC-KNI">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="c22-O7-iKe" id="NaN-dy-GzQ"/>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j93-9X-lPb">
+                    <rect key="frame" x="88" y="0.0" width="250" height="21"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="wzb-HN-Y8H">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vtb-1g-EKX">
+                    <rect key="frame" x="59" y="34" width="26" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Url:" id="QhQ-wR-TSQ">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="c22-O7-iKe" id="GOb-Dd-1xS"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="j93-9X-lPb" firstAttribute="leading" secondItem="xFP-JM-BeS" secondAttribute="trailing" constant="5" id="5sA-46-YYQ"/>
+                <constraint firstItem="j93-9X-lPb" firstAttribute="width" secondItem="2NP-oB-lQ0" secondAttribute="width" id="7xa-9i-Bt7"/>
+                <constraint firstAttribute="trailing" secondItem="j93-9X-lPb" secondAttribute="trailing" id="FTW-tL-fCQ"/>
+                <constraint firstItem="2NP-oB-lQ0" firstAttribute="leading" secondItem="vtb-1g-EKX" secondAttribute="trailing" constant="5" id="It5-tx-pTZ"/>
+                <constraint firstAttribute="trailing" secondItem="2NP-oB-lQ0" secondAttribute="trailing" id="O4A-HA-jpW"/>
+                <constraint firstItem="vtb-1g-EKX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" id="Ukx-6s-0as"/>
+                <constraint firstAttribute="bottom" secondItem="j93-9X-lPb" secondAttribute="bottom" id="XyQ-1t-Noi"/>
+                <constraint firstItem="2NP-oB-lQ0" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="e1l-5v-ivR"/>
+                <constraint firstItem="xFP-JM-BeS" firstAttribute="centerY" secondItem="j93-9X-lPb" secondAttribute="centerY" id="fTr-bC-uDB"/>
+                <constraint firstItem="xFP-JM-BeS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c22-O7-iKe" secondAttribute="leading" id="hBd-mY-JdW"/>
+                <constraint firstItem="vtb-1g-EKX" firstAttribute="centerY" secondItem="2NP-oB-lQ0" secondAttribute="centerY" id="k4J-q4-c5M"/>
+                <constraint firstItem="j93-9X-lPb" firstAttribute="top" secondItem="2NP-oB-lQ0" secondAttribute="bottom" constant="10" id="mDw-wK-F6f"/>
+            </constraints>
+            <connections>
+                <outlet property="configNameTextField" destination="j93-9X-lPb" id="HYC-Z8-Sgo"/>
+                <outlet property="urlTextField" destination="2NP-oB-lQ0" id="ZC9-Jy-Utf"/>
+            </connections>
+            <point key="canvasLocation" x="65.5" y="183"/>
+        </customView>
+    </objects>
+</document>

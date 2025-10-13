@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary xmlns:xi="http://www.w3.org/2003/XInclude" title="ClashX Terminonoly">
+    <suite name="Proxy Suite" code="????" description="Proxy setting for AppleScript.">
+        <command name="toggleProxy" code="clashtog" description="Toggle the system proxy.">
+            <cocoa class="ClashX.ProxySettingCommand"/>
+        </command>
+        <command name="proxyMode" code="clashmod" description="Update proxy mode.">
+            <cocoa class="ClashX.ProxyModeChangeCommand"/>
+            <direct-parameter description="The proxy mode to set. direct, global, or rule">
+                <type type="text"/>
+            </direct-parameter>
+        </command>
+    </suite>
+</dictionary>

@@ -1,0 +1,52 @@
+lane :build do
+
+addKeyChain
+
+build_app(
+  workspace: "ClashX.xcworkspace",
+  scheme: "ClashX",
+  export_method: "developer-id",
+  skip_package_pkg: "false",
+  clean: "true",
+  derived_data_path: "./build_derived_data"
+)
+end
+
+lane :check do
+  build_app(
+    workspace: "ClashX.xcworkspace",
+    scheme: "ClashX",
+    codesigning_identity: "-",
+    export_method: "developer-id",
+    skip_package_pkg: "true",
+    clean: "true",
+    derived_data_path: "./build_derived_data"
+  )
+  end
+
+lane :addKeyChain do
+  if is_ci?
+    
+    puts("create custom keychain")
+
+    delete_keychain(
+      name: "clashBuild"
+    ) if File.exist? File.expand_path("~/Library/Keychains/clashBuild-db")
+
+    create_keychain(
+      name: "clashBuild",
+      default_keychain: false,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: false,
+      password: "password"
+    )
+    
+    import_certificate(
+      certificate_path: ".github/certs/dist.p12",
+      keychain_name:"clashBuild",
+      keychain_password:"password",
+      certificate_password:""
+    )
+  end
+end

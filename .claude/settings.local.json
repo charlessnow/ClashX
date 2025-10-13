@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodebuild:*)",
+      "Bash(swiftc:*)",
+      "Bash(brew install:*)",
+      "Bash(go:*)",
+      "Bash(bash:*)",
+      "Bash(pod install:*)",
+      "Bash(open ClashX.xcworkspace)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
