@@ -72,6 +72,32 @@ jobs:
         cd ..
         # 使用 check lane（无签名构建）
         bundle exec fastlane check
+
+        # Find and copy the built .app from derived data
+        echo "Looking for built app..."
+        find ./build_derived_data -name "ClashX.app" -type d
+        APP_PATH=$(find ./build_derived_data -name "ClashX.app" -type d | head -n 1)
+
+        if [ -z "$APP_PATH" ]; then
+          echo "Error: ClashX.app not found in build_derived_data!"
+          exit 1
+        fi
+
+        echo "Found app at: $APP_PATH"
+        echo "Copying to root directory..."
+        cp -R "$APP_PATH" ./ClashX.app
+
+        # Find and zip the dSYM
+        echo "Looking for dSYM..."
+        DSYM_PATH=$(find ./build_derived_data -name "ClashX.app.dSYM" -type d | head -n 1)
+        if [ -n "$DSYM_PATH" ]; then
+          echo "Found dSYM at: $DSYM_PATH"
+          echo "Zipping dSYM..."
+          ditto -c -k --sequesterRsrc --keepParent "$DSYM_PATH" ClashX.app.dSYM.zip
+        else
+          echo "Warning: dSYM not found, skipping..."
+        fi
+
         echo "Checking SMJobBless Vailded"
         python3 SMJobBlessUtil.py check ClashX.app || echo "SMJobBless check skipped"
         echo "Check done"
@@ -86,15 +112,26 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/') || contains(github.event.head_commit.message, '[beta]')
       run: |
         npm install --global create-dmg
-        ls -la *.app || echo "No .app found in current directory"
-        if [ -d "ClashX.app" ]; then
-          create-dmg --overwrite --skip-signing ClashX.app || echo "DMG creation failed but continuing..."
-          ls -la *.dmg || echo "No DMG created"
-          if [ -f ClashX*.dmg ]; then
-            mv ClashX*.dmg ClashX.dmg
-          fi
-        else
+
+        echo "Checking for ClashX.app..."
+        ls -la *.app
+
+        if [ ! -d "ClashX.app" ]; then
           echo "Error: ClashX.app not found!"
+          exit 1
+        fi
+
+        echo "Creating DMG..."
+        create-dmg --overwrite --skip-signing ClashX.app
+
+        echo "Checking for created DMG..."
+        ls -la *.dmg
+
+        if [ -f ClashX*.dmg ]; then
+          mv ClashX*.dmg ClashX.dmg
+          echo "DMG created successfully: ClashX.dmg"
+        else
+          echo "Error: DMG creation failed!"
           exit 1
         fi
 
