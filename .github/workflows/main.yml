@@ -109,33 +109,32 @@ jobs:
         python3 SMJobBlessUtil.py check ClashX.app || echo "SMJobBless check skipped"
         echo "Build complete!"
 
-    - name: setup node
-      if: startsWith(github.ref, 'refs/tags/') || contains(github.event.head_commit.message, '[beta]')
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'
-
     - name: create dmg
       if: startsWith(github.ref, 'refs/tags/') || contains(github.event.head_commit.message, '[beta]')
       run: |
-        npm install --global create-dmg
-
         echo "Checking for ClashX.app..."
-        ls -la *.app
+        ls -la ClashX.app
 
         if [ ! -d "ClashX.app" ]; then
           echo "Error: ClashX.app not found!"
           exit 1
         fi
 
-        echo "Creating DMG..."
-        create-dmg --overwrite --skip-signing ClashX.app
+        echo "Creating DMG with hdiutil..."
+        # Create a temporary folder for DMG contents
+        mkdir -p dmg_temp
+        cp -R ClashX.app dmg_temp/
+
+        # Create the DMG
+        hdiutil create -volname "ClashX" -srcfolder dmg_temp -ov -format UDZO ClashX.dmg
+
+        # Clean up
+        rm -rf dmg_temp
 
         echo "Checking for created DMG..."
-        ls -la *.dmg
+        ls -la ClashX.dmg
 
-        if [ -f ClashX*.dmg ]; then
-          mv ClashX*.dmg ClashX.dmg
+        if [ -f "ClashX.dmg" ]; then
           echo "DMG created successfully: ClashX.dmg"
         else
           echo "Error: DMG creation failed!"
