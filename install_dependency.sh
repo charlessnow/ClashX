@@ -19,6 +19,16 @@ gzip Country.mmdb
 mv Country.mmdb.gz ./ClashX/Resources/Country.mmdb.gz
 echo "install dashboard"
 cd ClashX/Resources
-git clone -b gh-pages https://github.com/Dreamacro/clash-dashboard.git dashboard
-cd dashboard
-rm -rf *.webmanifest *.js CNAME .git
+# Try to clone dashboard, skip if fails
+if ! git clone --depth 1 -b gh-pages https://github.com/Dreamacro/clash-dashboard.git dashboard 2>/dev/null; then
+    echo "Warning: Failed to clone dashboard, creating placeholder"
+    mkdir -p dashboard
+    echo "<html><body><h1>Dashboard not available</h1></body></html>" > dashboard/index.html
+fi
+
+if [ -d "dashboard/.git" ]; then
+    cd dashboard
+    rm -rf *.webmanifest *.js CNAME .git
+    cd ..
+fi
+cd ../..

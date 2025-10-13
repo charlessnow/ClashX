@@ -35,6 +35,8 @@ jobs:
         xcode-version: latest-stable
 
     - name: install deps
+      env:
+        GIT_TERMINAL_PROMPT: 0
       run: |
         bash install_dependency.sh
 
