@@ -86,8 +86,17 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/') || contains(github.event.head_commit.message, '[beta]')
       run: |
         npm install --global create-dmg
-        create-dmg --skip-signing ClashX.app || create-dmg --skip-signing --overwrite ClashX.app
-        mv ClashX*.dmg ClashX.dmg
+        ls -la *.app || echo "No .app found in current directory"
+        if [ -d "ClashX.app" ]; then
+          create-dmg --overwrite --skip-signing ClashX.app || echo "DMG creation failed but continuing..."
+          ls -la *.dmg || echo "No DMG created"
+          if [ -f ClashX*.dmg ]; then
+            mv ClashX*.dmg ClashX.dmg
+          fi
+        else
+          echo "Error: ClashX.app not found!"
+          exit 1
+        fi
 
     # 临时禁用公证步骤（需要 Apple Developer 账号）
     # - name: notarize
