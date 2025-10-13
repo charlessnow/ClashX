@@ -1,95 +1,110 @@
 <h1 align="center">
-  <img src="https://github.com/bannedbook/ClashX/raw/master/clashx.png" alt="Clash" width="200">
+  <img src="https://github.com/charlessnow/ClashX/raw/master/clashx.png" alt="Clash" width="200">
   <br>
   ClashX
   <br>
 </h1>
 
+<div align="center">
 
-A rule based proxy For Mac base on Clash. 原作者删库。
+[English](README.md) | [简体中文](README_zh-CN.md)
 
-ClashX 旨在提供一个简单轻量化的代理客户端。[使用教程](https://github.com/bannedbook/fanqiang/blob/master/macos/ClashX.md)
+</div>
 
+A rule-based proxy client for macOS based on Clash.
 
-## 注意
-- ClashX / ClashX Pro 只是一个代理工具，不提供任何代理服务器。如果服务器不可用或与服务器续费有关的问题，请与您的提供商联系。
-- ClashX / ClashX Pro 目前并没有创建官网。凡是声称是 ClashX / ClashX Pro 官网的一定是骗子。
+ClashX aims to provide a simple and lightweight proxy client with an intuitive interface.
 
-## Features
+## ⚠️ Notice
 
-- HTTP/HTTPS and SOCKS protocol
-- Surge like configuration
+- ClashX / ClashX Pro is only a proxy tool and does not provide any proxy servers. For server-related issues or renewals, please contact your service provider.
+- ClashX / ClashX Pro does not have an official website. Any site claiming to be the official ClashX website is a scam.
+
+## ✨ Features
+
+- HTTP/HTTPS and SOCKS protocol support
+- Surge-like configuration
 - GeoIP rule support
-- Support Vmess/Shadowsocks/Socks5/Trojan
-- Support for Netfilter TCP redirect
+- Support for Vmess/Shadowsocks/Socks5/Trojan protocols
+- Netfilter TCP redirect support
+- macOS 10.14+ compatibility
+- **macOS 15+ (Sequoia) support with compatibility fixes**
 
-## Install
+## 📥 Installation
 
-**ClashX Pro With enhanced mode and other clash premium feature**
+**ClashX Pro** comes with enhanced mode and other Clash Premium Core features.
 
-**ClashX Pro版本，支持增强模式以及更多Clash Premium Core特性。**
+Download from the [Releases](https://github.com/charlessnow/ClashX/releases) page.
 
-You can download from [Release](https://github.com/bannedbook/ClashX/releases) page
+## 🔨 Build from Source
 
-## Build
-- Make sure have python3 and golang installed in your computer.
+### Prerequisites
 
-- Install Golang
-  ```
-  brew install golang
+- macOS 10.14 or later
+- Xcode 15.0+
+- Python 3
+- Golang 1.21+
 
-  or download from https://golang.org
-  ```
+### Build Steps
 
-- Download deps
-  ```
-  bash install_dependency.sh
-  ```
+1. **Install Golang**
+   ```bash
+   brew install golang
+   # or download from https://golang.org
+   ```
 
-- Build and run.
+2. **Install dependencies**
+   ```bash
+   bash install_dependency.sh
+   ```
 
-## Config
+3. **Open and build**
+   ```bash
+   open ClashX.xcworkspace
+   # Build in Xcode (Cmd+R)
+   ```
 
+## ⚙️ Configuration
+
+### Default Paths
 
 The default configuration directory is `$HOME/.config/clash`
 
-The default name of the configuration file is `config.yaml`. You can use your custom config name and switch config in menu `Config` section.
+The default configuration file name is `config.yaml`. You can use custom config names and switch between them in the `Config` menu.
 
+For more details, check out [SS-Rule-Snippet for Clash](https://github.com/Hackl0us/SS-Rule-Snippet/blob/master/LAZY_RULES/clash.yaml).
 
-Checkout [SS-Rule-Snippet for Clash](https://github.com/Hackl0us/SS-Rule-Snippet/blob/master/LAZY_RULES/clash.yaml) for more detail.
+## 🔧 Advanced Configuration
 
-## Advance Config
+### Change Proxy Port
 
-### 修改代理端口号
-1. 在菜单栏->配置->更多设置中修改对应端口号
+Go to Menu Bar → Config → More Settings and modify the corresponding port numbers.
 
+### Customize Status Menu Icon
 
+Place your icon file at `~/.config/clash/menuImage.png`, then restart ClashX.
 
-### Change your status menu icon
+### Change Default System Ignore List
 
-  Place your icon file in the `~/.config/clash/menuImage.png`  then restart ClashX
+Navigate to Menu → Config → Settings → Bypass proxy settings for these Hosts & Domains.
 
-### Change default system ignore list.
+### URL Schemes
 
-- Change by menu -> Config -> Setting -> Bypass proxy settings for these Hosts & Domains
-
-### URL Schemes.
-
-- Using url scheme to import remote config.
-
+- **Import remote config:**
   ```
   clash://install-config?url=http%3A%2F%2Fexample.com&name=example
   ```
-- Using url scheme to reload current config.
 
+- **Reload current config:**
   ```
   clash://update-config
   ```
 
-### Get process name
+### Get Process Name
 
-You can add the follow config in your config file, and set your proxy mode to rule. Then open the log via help menu in ClashX.
-```
+Add the following to your config file and set proxy mode to rule. View logs via the Help menu:
+
+```yaml
 script:
   code: |
     def main(ctx, metadata):
@@ -98,18 +113,31 @@ script:
       return 'DIRECT'
 ```
 
-### FAQ
+### Disable Notifications
 
-- Q: How to get shell command with external IP?  
-  A: Click the clashX menu icon and then press `Option-Command-C`  
+1. Go to System Settings and disable ClashX notification permissions
+2. Enable "Reduce Notifications" in Menu Bar → Config → More Settings
 
-### 关闭ClashX的通知
+**Note:** Not recommended as you may miss important error notifications.
 
-1. 在系统设置中关闭 clashx 的推送权限
-2. 在菜单栏->配置->更多设置中选中减少通知
+### Global Shortcuts
 
-Note：强烈不推荐这么做，这可能导致clashx的很多重要错误提醒无法显示。
+- Customize shortcuts in Menu Bar → Config → More Settings (requires v1.116.1+)
+- Or use AppleScript - see [Shortcuts Guide](Shortcuts.md)
 
-### 全局快捷键
-- 在菜单栏配置->更多配置中，自定义对应功能的快捷键。（需要1.116.1之后的版本）
-- 使用AppleScript设置, 详情点击 [全局快捷键](Shortcuts.md)
+## ❓ FAQ
+
+**Q: How to get shell commands with external IP?**
+A: Click the ClashX menu icon and press `Option-Command-C`
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## 📄 License
+
+See [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+Based on the original ClashX project.

@@ -8,7 +8,10 @@
       "Bash(bash:*)",
       "Bash(pod install:*)",
       "Bash(open ClashX.xcworkspace)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git tag:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
