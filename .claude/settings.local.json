@@ -11,7 +11,15 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git tag:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git branch:*)",
+      "Bash(curl -s \"https://api.github.com/repos/charlessnow/ClashX/actions/runs?per_page=5\")",
+      "Bash(curl -s \"https://api.github.com/repos/charlessnow/ClashX/actions/runs?per_page=1\")",
+      "Bash(python3:*)",
+      "Bash(curl -s \"https://api.github.com/repos/charlessnow/ClashX/actions/runs/18467236684/jobs\")",
+      "Bash(create-dmg:*)"
     ],
     "deny": [],
     "ask": []
