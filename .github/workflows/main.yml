@@ -2,8 +2,6 @@ name: ClashX
 
 on:
   push:
-    branches:
-      - 'release/**'
     tags:
       - '[0-9]+.[0-9]+.[0-9]+'
   workflow_dispatch:
