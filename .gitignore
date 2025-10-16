@@ -27,3 +27,6 @@ gitupdate.bat
 
 # Backup files
 *.bak
+
+# Swift Package Manager
+ClashX.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
