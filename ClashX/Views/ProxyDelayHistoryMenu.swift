@@ -37,10 +37,10 @@ class ProxyDelayHistoryMenu: NSMenu {
         let change = Changeset(previous: currentHistory, current: historys, identifier: { $0.time })
         currentHistory = historys
         if change.moves.isEmpty && change.mutations.isEmpty {
-            change.removals.reversed().forEach { idx in
+            for idx in change.removals.reversed() {
                 removeItem(at: idx)
             }
-            change.inserts.forEach { idx in
+            for idx in change.inserts {
                 let his = historys[idx]
                 let item = NSMenuItem(title: his.displayString, action: nil, keyEquivalent: "")
                 insertItem(item, at: idx)

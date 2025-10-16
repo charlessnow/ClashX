@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 enum UpdateExternalResourceAction {
     static func run() {
         ApiRequest.requestExternalProviderNames { provider in

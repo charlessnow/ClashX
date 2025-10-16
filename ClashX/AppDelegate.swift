@@ -903,14 +903,14 @@ extension AppDelegate: NSMenuDelegate {
     }
 
     func menu(_ menu: NSMenu, willHighlight item: NSMenuItem?) {
-        menu.items.forEach {
-            ($0.view as? ProxyGroupMenuHighlightDelegate)?.highlight(item: item)
+        for element in menu.items {
+            (element.view as? ProxyGroupMenuHighlightDelegate)?.highlight(item: item)
         }
     }
 
     func menuDidClose(_ menu: NSMenu) {
-        menu.items.forEach {
-            ($0.view as? ProxyGroupMenuHighlightDelegate)?.highlight(item: nil)
+        for element in menu.items {
+            (element.view as? ProxyGroupMenuHighlightDelegate)?.highlight(item: nil)
         }
     }
 }

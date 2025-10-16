@@ -14,7 +14,7 @@ class SettingTabViewController: NSTabViewController, NibLoadable {
         tabStyle = .toolbar
         if #unavailable(macOS 10.11) {
             tabStyle = .segmentedControlOnTop
-            tabViewItems.forEach { item in
+            for item in tabViewItems {
                 item.image = nil
             }
         }

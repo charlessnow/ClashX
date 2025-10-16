@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 enum Settings {
     static let defaultMmdbDownloadUrl = "https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb"
     @UserDefault("mmdbDownloadUrl", defaultValue: defaultMmdbDownloadUrl)

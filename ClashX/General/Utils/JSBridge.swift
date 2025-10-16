@@ -70,12 +70,12 @@ extension JSBridge: WKScriptMessageHandler {
 private class ClashScriptMessageHandler: NSObject, WKScriptMessageHandler {
     weak var delegate: WKScriptMessageHandler?
 
-    public init(delegate: WKScriptMessageHandler) {
+    init(delegate: WKScriptMessageHandler) {
         self.delegate = delegate
         super.init()
     }
 
-    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         delegate?.userContentController(userContentController, didReceive: message)
     }
 }

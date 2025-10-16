@@ -15,6 +15,13 @@ struct Command {
     func run() -> String {
         var output = ""
 
+        // 检查命令路径是否存在
+        let fileManager = FileManager.default
+        guard fileManager.fileExists(atPath: cmd) else {
+            Logger.log("Command path does not exist: \(cmd)", level: .warning)
+            return ""
+        }
+
         let task = Process()
         task.launchPath = cmd
         task.arguments = args
@@ -22,13 +29,17 @@ struct Command {
         let outpipe = Pipe()
         task.standardOutput = outpipe
 
-        task.launch()
-
-        task.waitUntilExit()
-        let outdata = outpipe.fileHandleForReading.readDataToEndOfFile()
-        if var string = String(data: outdata, encoding: .utf8) {
-            output = string.trimmingCharacters(in: .newlines)
+        do {
+            task.launch()
+            task.waitUntilExit()
+            let outdata = outpipe.fileHandleForReading.readDataToEndOfFile()
+            if var string = String(data: outdata, encoding: .utf8) {
+                output = string.trimmingCharacters(in: .newlines)
+            }
+        } catch {
+            Logger.log("Failed to run command: \(cmd), error: \(error)", level: .error)
         }
+
         return output
     }
 }

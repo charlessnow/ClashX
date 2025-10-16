@@ -201,7 +201,6 @@ extension RemoteConfigViewController: NSTableViewDataSource {
             return setupCell(withIdentifier: "nameCell", string: config.name)
         case "updateTime":
             return setupCell(withIdentifier: "timeCell", string: config.displayingTimeString())
-
         default: assertionFailure()
         }
         return nil

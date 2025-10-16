@@ -23,13 +23,21 @@ class MenuItemBaseView: NSView {
         }
     }
 
-    let effectView: NSVisualEffectView = {
-        let effectView = NSVisualEffectView()
-        effectView.material = .popover
-        effectView.state = .active
-        effectView.isEmphasized = true
-        effectView.blendingMode = .behindWindow
-        return effectView
+    let effectView: NSView = {
+        if #available(macOS 26, *) {
+            // NSGlassEffectContainerView ?
+            let view = NSView()
+            view.wantsLayer = true
+            view.layer?.backgroundColor = NSColor.clear.cgColor
+            return view
+        } else {
+            let effectView = NSVisualEffectView()
+            effectView.material = .popover
+            effectView.state = .active
+            effectView.isEmphasized = true
+            effectView.blendingMode = .behindWindow
+            return effectView
+        }
     }()
 
     var cells: [NSCell?] {
@@ -72,7 +80,7 @@ class MenuItemBaseView: NSView {
     }
 
     func didClickView() {
-        assertionFailure("Please override this method")
+//        assertionFailure("Please override this method")
     }
 
     // MARK: Private
@@ -119,7 +127,8 @@ class MenuItemBaseView: NSView {
         super.draw(dirtyRect)
         labels.forEach { $0.textColor = (enclosingMenuItem?.isEnabled ?? true) ? NSColor.labelColor : NSColor.placeholderTextColor }
         let highlighted = isHighlighted && (enclosingMenuItem?.isEnabled ?? false)
-        effectView.material = highlighted ? .selection : .popover
+        setHighlighted(highlighted)
+
         cells.forEach { $0?.backgroundStyle = isHighlighted ? .emphasized : .normal }
     }
 
@@ -148,6 +157,14 @@ class MenuItemBaseView: NSView {
     override func mouseUp(with event: NSEvent) {
         DispatchQueue.main.async {
             self.didClickView()
+        }
+    }
+
+    func setHighlighted(_ isHighlighted: Bool) {
+        if #available(macOS 26, *) {
+            effectView.layer?.backgroundColor = isHighlighted ? NSColor.controlAccentColor.cgColor : NSColor.clear.cgColor
+        } else {
+            (effectView as? NSVisualEffectView)?.material = isHighlighted ? .selection : .popover
         }
     }
 }

@@ -53,8 +53,8 @@ class ProxyGroupSpeedTestMenuItem: NSMenuItem {
             }.forEach {
                 providers.insert($0)
             }
-            providers.forEach {
-                ApiRequest.healthCheck(proxy: $0)
+            for provider in providers {
+                ApiRequest.healthCheck(proxy: provider)
             }
         }
         menu?.cancelTracking()

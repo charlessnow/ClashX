@@ -73,7 +73,6 @@ class ConnectionTopListViewModel {
             connections = connections.filter { conn in
                 conn.metadata.processPath == pathOrPid || conn.metadata.pid == pathOrPid
             }
-
         case let .source(ip):
             connections = connections.filter { conn in
                 conn.metadata.sourceIP == ip
