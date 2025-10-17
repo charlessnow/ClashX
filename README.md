@@ -11,14 +11,24 @@
 
 </div>
 
+## 🌐 Official Website
+
+**Official Website**: [https://clashx.tech](https://clashx.tech)
+
+- 📥 [Download Latest Version](https://clashx.tech/download)
+- 📖 [Documentation & Tutorial](https://clashx.tech/tutorial)
+- ❓ [FAQ](https://clashx.tech/tutorial#faq)
+
+---
+
 A rule-based proxy client for macOS based on Clash.
 
 ClashX aims to provide a simple and lightweight proxy client with an intuitive interface.
 
 ## ⚠️ Notice
 
+- **Official Website**: Please visit the official website at **clashx.tech**.
 - ClashX / ClashX Pro is only a proxy tool and does not provide any proxy servers. For server-related issues or renewals, please contact your service provider.
-- ClashX / ClashX Pro does not have an official website. Any site claiming to be the official ClashX website is a scam.
 
 ## ✨ Features
 

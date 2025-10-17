@@ -11,14 +11,24 @@
 
 </div>
 
+## 🌐 官方网站
+
+**官方网站**: [https://clashx.tech](https://clashx.tech)
+
+- 📥 [下载最新版本](https://clashx.tech/download)
+- 📖 [使用文档与教程](https://clashx.tech/tutorial)
+- ❓ [常见问题](https://clashx.tech/tutorial#faq)
+
+---
+
 基于 Clash 的 macOS 规则代理客户端。
 
 ClashX 旨在提供一个简单轻量化的代理客户端，具有直观的用户界面。
 
 ## ⚠️ 注意
 
+- **官方网站**: 请访问官方网站 **clashx.tech**。
 - ClashX / ClashX Pro 只是一个代理工具，不提供任何代理服务器。如果服务器不可用或与服务器续费有关的问题，请与您的提供商联系。
-- ClashX / ClashX Pro 目前并没有创建官网。凡是声称是 ClashX / ClashX Pro 官网的一定是骗子。
 
 ## ✨ 功能特性
 
