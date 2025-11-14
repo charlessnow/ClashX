@@ -11,6 +11,18 @@
 
 </div>
 
+## ⚠️ 情况说明 / Notice
+
+**中文:**
+
+本项目使用的是 [yichengchen](https://github.com/yichengchen) 大佬以前的代码。因为我自己使用时发现在 macOS 26 (Sequoia) 系统下无法使用,所以重新修改代码使其在 macOS 26 可用。源代码来源于 [bannedbook/ClashX](https://github.com/bannedbook/ClashX)。git 历史记录丢失是因为在修改出问题后重新搞的时候把 `.git` 文件删掉了。
+
+**English:**
+
+This project is based on code originally created by [yichengchen](https://github.com/yichengchen). I discovered that the original version was not compatible with macOS 26 (Sequoia), so I modified the code to make it work on macOS 26. The source code was forked from [bannedbook/ClashX](https://github.com/bannedbook/ClashX). The git history was lost because I accidentally deleted the `.git` folder when recreating the project after encountering some issues.
+
+---
+
 ## 🌐 官方网站
 
 **官方网站**: [https://clashx.tech](https://clashx.tech)
